@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  kernel:
+    build: ./kernel
+    container_name: kernel
+    image: kernel
+
+  jupyterlab:
+    build: ./jupyterlab
+    container_name: jupyterlab
+    image: jupyterlab
+    ports:
+      - "8888:8888"
+    depends_on:
+      - kernel
